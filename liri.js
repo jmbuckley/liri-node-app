@@ -31,11 +31,10 @@ const spotifySong = (songName) => {
             if (error) throw error
             let songInfo = data.tracks.items
             for ( i in songInfo) {
-                console.log(blue("So you want to know about " + yellow(songInfo[i].name) + "? \n" +
-                                "Performed by " + yellow(songInfo[i].artists[0].name) + "? \n" +
-                                "On the album " + yellow(songInfo[i].album.name) + " , \n" +
-                                "released on/in " + yellow(songInfo[i].album.release_date) + ". \n" +
-                                "Here's a link to listen: " + yellow(songInfo[i].external_urls.spotify)))
+                console.log(blue("Song Name " + yellow(songInfo[i].name) + " \n" +
+                                "Artist Name " + yellow(songInfo[i].artists[0].name) + " \n" +
+                                "Album Name " + yellow(songInfo[i].album.name) + " , \n" +
+                                "Release Date " + yellow(songInfo[i].album.release_date) + ". \n"))
                 }
              })
         }
@@ -44,10 +43,10 @@ const omdbLookUp = (movieName) => {
     request('http://www.omdbapi.com/?t=' + uQuery + '&y=&plot=&short&apikey=trilogy&r=json', function (error, response, body) {
         if (error) throw error
         let movieInfo = JSON.parse(body)
-        console.log(blue("So you want to know about " + yellow(movieInfo.Title) + "? \n"
+        console.log(blue("Movie Name " + yellow(movieInfo.Title) + ", \n"
                     + yellow(movieInfo.Title) + " which was released in " + yellow(movieInfo.Year) + ". \n"
-                    + "IMDb gave it " + yellow(movieInfo.Ratings[0].Value) + ", \n"
-                    + "while Rotten Tomatoes gave it " + yellow(movieInfo.Ratings[1].Value) + ". \n"
+                    + "IMDb Rating:" + yellow(movieInfo.Ratings[0].Value) + " \n"
+                    + "Rotten Tomatoes Rating: " + yellow(movieInfo.Ratings[1].Value) + ". \n"
                     + yellow(movieInfo.Title) + " is available in " + yellow(movieInfo.Language) + ", \n"
                     +  yellow(movieInfo.Title) + " went to DVD format on " + yellow(movieInfo.DVD) + ". \n"))
             })
