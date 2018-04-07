@@ -1,5 +1,5 @@
 {
-  "name": "liri-node-app",
+  "name": "liri",
   "version": "1.0.0",
   "description": "Command line node app to retrieve Twitter, OMDB, and Spotify data",
   "main": "index.js",
@@ -18,8 +18,10 @@
   "homepage": "https://github.com/jmbuckley/liri-node-app#readme",
   "dependencies": {
     "chalk": "^2.3.2",
+    "chalk-animation": "^1.6.0",
     "dotenv": "^5.0.1",
     "node-spotify-api": "^1.0.7",
+    "omdb": "^0.8.0",
     "request": "^2.85.0",
     "twitter": "^1.7.1"
   },
