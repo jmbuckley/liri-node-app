@@ -52,10 +52,6 @@ const omdbLookUp = (movieName) => {
             })
         }
 
-const random = () => {
-    
-}
-
 switch (method) {
     case 'tweets' :
         showTweets()
@@ -65,8 +61,5 @@ switch (method) {
         break
     case 'omdb' :
         omdbLookUp()
-        break
-    case 'random' :
-        random()
         break
 }
